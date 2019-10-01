@@ -1,8 +1,6 @@
 /* eslint-disable indent */
 'use strict';
 
-
-
 var seattle = {
     location: 'seattle',
     minCustomers: 23,
