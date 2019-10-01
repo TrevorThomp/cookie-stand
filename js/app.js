@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 var seattle = {
     location: 'seattle',
     minCustomers: 23,
@@ -44,9 +42,6 @@ var seattle = {
     ul.appendChild(li)
     }
 }
-
-console.log(seattle.totalSum())
-
 
 var tokyo = {
     location: 'tokyo',
