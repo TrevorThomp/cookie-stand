@@ -8,7 +8,7 @@ function Location(location, minCustomers, maxCustomers, averageCookies) {
 };
 
 var storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
-var seattleInputs = [];
+var controlCurve = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
 
 
 
@@ -39,7 +39,7 @@ Location.prototype.randomNumCustomer = function() {
 Location.prototype.cookiesPurchased = function () {
     var result = [];
     for (var i = 0; i < storeHours.length; i++) {
-        result.push(Math.floor(this.randomNumCustomer() * this.averageCookies));
+        result.push(Math.floor((this.randomNumCustomer() * controlCurve[i]) * this.averageCookies));
     }
     return result;
 };
@@ -66,7 +66,6 @@ Location.prototype.render = function() {
             var storage = this.cookiesPurchased()[i];   
             td2.setAttribute('class', `${this.location} ${i}`);
             td2.textContent = storage;
-            seattleInputs.push(storage);
             row.appendChild(td2);   
         }
         td2 = document.createElement('td');
@@ -77,7 +76,6 @@ Location.prototype.render = function() {
         var row = document.createElement('tr');
         var table2 = document.getElementById('table');
         var td = document.createElement('td');
-        var tds = document.getElementsByTagName('td');
         table2.appendChild(row)
         row.appendChild(td);
         td.setAttribute("class", "table-location"); 
@@ -85,7 +83,6 @@ Location.prototype.render = function() {
     
             for (var i = 0; i < storeHours.length; i++) {
                 var td2 = document.createElement('td');
-                var sum = 0;
                 row.appendChild(td2);
             }
             td2 = document.createElement('td');
