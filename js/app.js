@@ -30,7 +30,7 @@ var seattle = {
         var section = document.getElementById('container');
         var ul = document.createElement('ul');
         ul.className = 'cookies';
-        ul.innerHTML = `<h2>${this.location.toUpperCase()}</h2>`;
+        ul.textContent = `<h2>${this.location}</h2>`;
         section.appendChild(ul);
         for (var i = 0; i <= this.storeHours.length; i++) {
             var li = document.createElement('li');
@@ -71,7 +71,7 @@ var tokyo = {
         var section = document.getElementById('container');
         var ul = document.createElement('ul');
         ul.className = 'cookies';
-        ul.innerHTML = `<h2>${this.location.toUpperCase()}</h2>`;
+        ul.textContent = `<h2>${this.location}</h2>`;
         section.appendChild(ul);
         for (var i = 0; i <= this.storeHours.length; i++) {
             var li = document.createElement('li');
@@ -112,7 +112,7 @@ var dubai = {
         var section = document.getElementById('container');
         var ul = document.createElement('ul');
         ul.className = 'cookies';
-        ul.innerHTML = `<h2>${this.location.toUpperCase()}</h2>`;
+        ul.textContent = `<h2>${this.location}</h2>`;
         section.appendChild(ul);
         for (var i = 0; i <= this.storeHours.length; i++) {
             var li = document.createElement('li');
@@ -153,7 +153,7 @@ var paris = {
         var section = document.getElementById('container');
         var ul = document.createElement('ul');
         ul.className = 'cookies';
-        ul.innerHTML = `<h2>${this.location.toUpperCase()}</h2>`;
+        ul.textContent = `<h2>${this.location}</h2>`;
         section.appendChild(ul);
         for (var i = 0; i <= this.storeHours.length; i++) {
             var li = document.createElement('li');
@@ -194,7 +194,7 @@ var lima = {
         var section = document.getElementById('container');
         var ul = document.createElement('ul');
         ul.className = 'cookies';
-        ul.innerHTML = `<h2>${this.location.toUpperCase()}</h2>`;
+        ul.innerHTML = `<h2>${this.location}</h2>`;
         section.appendChild(ul);
         for (var i = 0; i <= this.storeHours.length; i++) {
             var li = document.createElement('li');
