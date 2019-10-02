@@ -43,14 +43,13 @@ var createTableFooter = function() {
   var row = document.createElement('tr');
   var table = document.getElementById('table');
   var td = document.createElement('td');
+  var sum = 0;
   table.appendChild(tableFooter);
   tableFooter.appendChild(row);
   row.appendChild(td);
   td.setAttribute('class', 'table-location');
   td.textContent = 'Totals';
   //Loops through and calculates columns by class then stores in bottom row
-
-
   for (var i = 0; i < storeHours.length; i++) {
     var sumValue = 0;
     var dailyLocationSum = 0;
@@ -80,15 +79,13 @@ function submitForm(e) {
   var minCustomers = e.target.minCustomers.value;
   var maxCustomers = e.target.maxCustomers.value;
   var avgCookies = e.target.avgCookies.value;
-  var newArray = [];
-  var newCity = new Location(location, minCustomers, maxCustomers, avgCookies);
+  var newCity = new City(location, minCustomers, maxCustomers, avgCookies);
   newCity.randomNumCustomer();
   newCity.cookiesPurchased();
   newCity.totalSum();
   newCity.render();
 
   numberOfStores++;
-
 }
 
 form.addEventListener('submit', submitForm);
