@@ -110,21 +110,7 @@ var dubai = new Location('Dubai', 11, 38, 3.7);
 var paris = new Location('Paris', 20, 38, 2.3 );
 var lima = new Location('Lima', 2, 16, 4.6);
 
-(function displayLists() {
-    createTableHeader();
-    seattle.render();
-    tokyo.render();
-    dubai.render();
-    paris.render();
-    lima.render();
-    createTableFooter();
-})();
-
-
-
-//Form submission
 var form = document.getElementById('main-form');
-
 
 function submitForm(e) {
     e.preventDefault();
@@ -142,3 +128,21 @@ function submitForm(e) {
 }
 
 form.addEventListener('submit', submitForm);
+
+(function displayLists() {
+    createTableHeader();
+    seattle.render();
+    tokyo.render();
+    dubai.render();
+    paris.render();
+    lima.render();
+    createTableFooter();
+})();
+
+
+
+//Form submission
+
+
+
+
