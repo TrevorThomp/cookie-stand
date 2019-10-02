@@ -40,6 +40,7 @@ var createTableHeader = function() {
     td.setAttribute("class", "table-location"); 
     td.textContent = 'Totals';
 
+    //Loops through and calculates columns by class then stores in bottom row
         for (var i = 0; i < storeHours.length; i++) {
             var sumValue = 0;
             var dailyLocationSum = 0;

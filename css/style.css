@@ -29,9 +29,12 @@ td {
     border: 1px solid white;
 }
 
-
 th {
     padding: 10px;
+}
+
+label {
+    display: inline;
 }
 
 .table-location {
@@ -61,6 +64,7 @@ th {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 150px;
 }
 
 #img-wrap {
@@ -78,4 +82,32 @@ th {
     text-align: center;
 }
     
+#input-container {
+    display: flex;
+    position: relative;
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.input {
+    margin: 5px;
+    padding: 5px;
+}
+
+#submit-button {
+    text-align: center;
+    position: absolute;
+    top: 115px;
+    left: 300px;
+    padding: 20px;
+    width: 120px;
+    transition: 0.5s;
+}
+
+#submit-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
 
