@@ -9,6 +9,7 @@ function Location(location, minCustomers, maxCustomers, averageCookies) {
 
 var storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 var controlCurve = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
+var numberOfStores = 0;
 
 var createTableHeader = function() {
     var section = document.getElementById('container');
@@ -43,8 +44,9 @@ var createTableHeader = function() {
             var sumValue = 0;
             var dailyLocationSum = 0;
             var colValues = document.getElementsByClassName(`${[i]}`);
-            var dailyValues = document.getElementsByClassName(`sum`);
-            for (var j = 0; j < 5; j++) {
+            var dailyValues = document.getElementsByClassName('sum');
+            console.log(dailyValues)
+            for (var j = 0; j < numberOfStores; j++) {  
                 sumValue += parseInt(`${colValues[j].textContent}`);
                 dailyLocationSum += parseInt(`${dailyValues[j].textContent}`);
             }
@@ -98,6 +100,8 @@ Location.prototype.render = function() {
         td.setAttribute('class', 'sum');
         td.textContent = this.totalSum();
         row.appendChild(td);
+
+        numberOfStores++;
 }
      
 var seattle = new Location('Seattle', 23, 65, 6.3);
