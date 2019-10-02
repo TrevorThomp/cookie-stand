@@ -20,6 +20,24 @@ li {
     margin-bottom: 5px;
 }
 
+table {
+    border-collapse: collapse; 
+}
+
+td {
+    text-align: center;
+    border: 1px solid white;
+}
+
+
+th {
+    padding: 10px;
+}
+
+.table-location {
+    padding: 10px;
+}
+
 #navbar {
     display: flex;
     justify-content: space-between;
