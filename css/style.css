@@ -18,6 +18,8 @@ h2 {
 li {
     font-family: Verdana, Helvetica, Tahoma, sans-serif;
     margin-bottom: 5px;
+    text-decoration: none;
+    list-style: none;
 }
 
 table {
@@ -29,7 +31,6 @@ td {
     border: 1px solid white;
 }
 
-
 th {
     padding: 10px;
 }
@@ -38,29 +39,35 @@ th {
     padding: 10px;
 }
 
-#navbar {
+.nav-item {
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 10px;
+  transition: 0.5s;
+  margin-right: 45px;
+}
+
+#main-header,
+#main-nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 30px 30px;
 }
 
-#navbar>a {
-        text-decoration: none;
-        font-size: 1.1em;
-        transition: 0.5s;
+#main-header {
+  justify-content: space-between;
 }
 
-#navbar>a:hover {
+.nav-item:hover {
     cursor: pointer;
     color: white;
     text-decoration: underline;
 }
 
-#container {
+#container,
+#container2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 #img-wrap {
@@ -77,5 +84,26 @@ th {
     padding: 50px; 
     text-align: center;
 }
-    
+
+#color-circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  margin: 50px;
+}
+
+/* .nav-items {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+}
+     */
 
