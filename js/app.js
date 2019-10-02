@@ -46,18 +46,17 @@ var createTableHeader = function() {
             var dailyLocationSum = 0;
             var colValues = document.getElementsByClassName(`${[i]}`);
             var dailyValues = document.getElementsByClassName('sum');
-            console.log(dailyValues)
             for (var j = 0; j < numberOfStores; j++) {  
-                sumValue += parseInt(`${colValues[j].textContent}`);
                 dailyLocationSum += parseInt(`${dailyValues[j].textContent}`);
+                sumValue += parseInt(`${colValues[j].textContent}`);
             }
             td = document.createElement('td');
             td.setAttribute('class', 'colTotals')
             td.textContent = `${sumValue}`
             row.appendChild(td);
         }
-        td = document.createElement('td');
-        td.textContent = `${dailyLocationSum}`
+        var td = document.createElement('td');
+        td.textContent = `${dailyLocationSum.toLocaleString()}`
         row.appendChild(td);
   }
 
@@ -78,7 +77,7 @@ Location.prototype.totalSum = function () {
     for (var i = 0; i < storeHours.length; i++) {
         cookieSum += this.cookiesPurchased()[i];
     }
-    return cookieSum.toLocaleString();
+    return cookieSum;
 };
 
 Location.prototype.render = function() {
@@ -105,7 +104,7 @@ Location.prototype.render = function() {
         numberOfStores++;
 }
      
-var seattle = new Location('Seattle', 23, 65, 6.3);
+var seattle = new Location('Seattle', 23, 100, 6.3);
 var tokyo = new Location('Tokyo', 3, 24, 1.2);
 var dubai = new Location('Dubai', 11, 38, 3.7);
 var paris = new Location('Paris', 20, 38, 2.3 );
@@ -123,3 +122,23 @@ var lima = new Location('Lima', 2, 16, 4.6);
 
 
 
+//Form submission
+var form = document.getElementById('main-form');
+
+
+function submitForm(e) {
+    e.preventDefault();
+    var location = e.target.location.value;
+    var minCustomers = e.target.minCustomers.value;
+    var maxCustomers = e.target.maxCustomers.value;
+    var avgCookies = e.target.avgCookies.value;
+    
+
+    var newCity = new Location(location, minCustomers, maxCustomers, avgCookies);
+    newCity.randomNumCustomer();
+    newCity.cookiesPurchased();
+    newCity.totalSum();
+    newCity.render();
+}
+
+form.addEventListener('submit', submitForm);
