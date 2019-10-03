@@ -130,7 +130,6 @@ City.prototype.render = function() {
   td.textContent = this.totalSum();
   row.appendChild(td);
   locationArray.push(cityArray);
-  console.log(locationArray);
   numberOfStores++;
 };
 
