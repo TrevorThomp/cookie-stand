@@ -35,6 +35,10 @@ th {
     padding: 10px;
 }
 
+label {
+    display: inline;
+}
+
 .table-location {
     padding: 10px;
 }
