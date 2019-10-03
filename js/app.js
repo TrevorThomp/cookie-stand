@@ -70,6 +70,11 @@ var createTableFooter = function() {
   sumArray.push(dailyLocationSum);
 };
 
+function delFooter() {
+  var table = document.getElementById('table');
+  table.deleteTFoot();
+}
+
 console.log(sumArray);
 
 //Dynamic Form
@@ -87,6 +92,9 @@ function submitForm(e) {
   newCity.totalSum();
   newCity.render();
 
+
+  delFooter();
+  createTableFooter();
   numberOfStores++;
 }
 
