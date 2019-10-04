@@ -73,6 +73,7 @@ var createTableFooter = function() {
   sumArray.push(dailyLocationSum);
 };
 
+// Function that deletes the <tfoot> element
 function delFooter() {
   var table = document.getElementById('table');
   table.deleteTFoot();
