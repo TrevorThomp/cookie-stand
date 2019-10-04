@@ -11,7 +11,6 @@ var storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', 
 var controlCurve = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
 var locationArray = [];
 var sumArray = [];
-var numberOfStores = 0;
 
 var createTableHeader = function() {
   var tableHeader = document.createElement('thead');
@@ -75,8 +74,6 @@ function delFooter() {
   table.deleteTFoot();
 }
 
-console.log(sumArray);
-
 //Dynamic Form
 var form = document.getElementById('main-form');
 
@@ -91,11 +88,8 @@ function submitForm(e) {
   newCity.cookiesPurchased();
   newCity.totalSum();
   newCity.render();
-
-
   delFooter();
   createTableFooter();
-  numberOfStores++;
 }
 
 form.addEventListener('submit', submitForm);
@@ -143,7 +137,6 @@ City.prototype.render = function() {
   td.textContent = this.totalSum();
   row.appendChild(td);
   locationArray.push(cityArray);
-  numberOfStores++;
 };
 
 var seattle = new City('Seattle', 23, 100, 6.3);
