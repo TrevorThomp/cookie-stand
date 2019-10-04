@@ -25,8 +25,8 @@
   </header>
  
     <main>
-      <section>
-        <form action="" id="color-form">
+      <div>
+        <form action="get" id="color-form">
           <fieldset id="radio-container">
             <legend>Pick your color</legend>
               <label for="default">Default:</label>
@@ -41,34 +41,33 @@
               <label for="green">Green:</label>
               <input type="radio" name="color" id="green">
 
-              <label for="Orange">Orange:</label>
+              <label for="orange">Orange:</label>
               <input type="radio" name="color" id="orange">
           </fieldset>
         </form>
-      </section>
-        <h1>Welcome to Pat's</h1>
-      <section id="greeting-container">
+      </div>
+
+      <h1>Welcome to Pat's</h1>
+      <div id="greeting-container">
           <img src="./img/family.jpg" alt="Picture of a family"  class="home-photos">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut scelerisque mauris. Nam nec lobortis tortor. Nunc ex sapien, condimentum at lacus eu, suscipit ultricies felis. Proin massa massa, cursus a ornare eu, auctor nec eros. Integer vitae dapibus elit, quis pellentesque purus. Vestibulum ornare fringilla tempus. Suspendisse scelerisque nunc sed pellentesque vulputate. Ut a augue lectus. Suspendisse ac lectus at diam rhoncus sodales. Phasellus porta odio non interdum ultrices. Ut tellus ligula, maximus id lorem ac, aliquam luctus magna. Praesent posuere, diam ac dictum cursus, quam felis aliquam metus, sed mollis nisl augue quis massa. Curabitur condimentum lorem sit amet nibh venenatis dictum. Aenean in pulvinar magna, vitae faucibus est. Nam commodo vitae leo pellentesque ultricies. Donec libero diam, ornare sit amet venenatis interdum, molestie vitae sapien.</p>
           <img src="./img/fish.jpg" alt="Multiple Fish" class="home-photos">
-      </section>
+      </div>
 
       <div id="frosty-container">
         <img src="./img/frosted-cookie.jpg" alt="Frosted Cookies" id="frosted-cookies"> 
       </div>
 
-        <div id="tools-container">
-            <h1>Pat's Trust Tools and Apparel</h1>
-        </div>
-      <section id="apparel-container">
+      <div id="tools-container">
+        <h1>Pat's Trust Tools and Apparel</h1>
+      </div>
+
+      <div id="apparel-container">
         <img src="./img/shirt.jpg" alt="Picture of Pat's shirt" class="home-photos">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ut scelerisque mauris. Nam nec lobortis tortor. Nunc ex sapien, condimentum at lacus eu, suscipit ultricies felis. Proin massa massa, cursus a ornare eu, auctor nec eros. Integer vitae dapibus elit, quis pellentesque purus. Vestibulum ornare fringilla tempus. Suspendisse scelerisque nunc sed pellentesque vulputate. Ut a augue lectus. Suspendisse ac lectus at diam rhoncus sodales. Phasellus porta odio non interdum ultrices. Ut tellus ligula, maximus id lorem ac, aliquam luctus magna. Praesent posuere, diam ac dictum cursus, quam felis aliquam metus, sed mollis nisl augue quis massa. Curabitur condimentum lorem sit amet nibh venenatis dictum. Aenean in pulvinar magna, vitae faucibus est. Nam commodo vitae leo pellentesque ultricies. Donec libero diam, ornare sit amet venenatis interdum, molestie vitae sapien.</p>
-        <img src="./img/cutter (1).jpeg" alt="Cookie Cutter Tools" class="home-photos">
-
-
-      </section>
+        <img src="./img/cutter.jpeg" alt="Cookie Cutter Tools" class="home-photos">
+      </div>
     </main>
-
 
     <footer>
       <div  id="contact-information">
@@ -83,6 +82,8 @@
           </ul>
       </div>
     </footer>
+
+    <script src="./js/home.js"></script>
 </body>
-  <script src="./js/home.js"></script>
+  
 </html>

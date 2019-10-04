@@ -21,31 +21,28 @@
         </nav>
       </header>
     
-   <section id="container"></section>
+   <div id="container"></div>
 
    <form action="get" id="main-form">
        <fieldset id="input-container">
            <legend>Enter your information</legend>
 
            <label for="location">Enter your location:</label>
-           <input type="text" name="location" class="input">
+           <input type="text" name="location" class="input" id="location" required>
 
            <label for="minCustomers">Enter minimum customers:</label>
-           <input type="text" name="minCustomers" class="input">
+           <input type="text" name="minCustomers" class="input" id="minCustomers" required>
 
            <label for="maxCustomers">Enter your maximum customers:</label>
-           <input type="text" name="maxCustomers" class="input">
+           <input type="text" name="maxCustomers" class="input" id="maxCustomers" required>
 
            <label for="avgCookies">Enter your average cookies sold:</label>
-           <input type="text" name="avgCookies" class="input">
+           <input type="text" name="avgCookies" class="input" id="avgCookies" required>
 
            <button id="submit-button">Submit</button>
-       </fieldset>
-
-       
+       </fieldset>  
    </form>
 
-    
+   <script src="../js/app.js"></script>
 </body>
-<script src="../js/app.js"></script>
 </html>

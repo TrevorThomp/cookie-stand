@@ -6,7 +6,6 @@ var blueRadio = document.getElementById('blue');
 var redRadio = document.getElementById('red');
 var greenRadio = document.getElementById('green');
 var orangeRadio = document.getElementById('orange');
-var navItems = document.querySelectorAll('.nav-item');
 
 defaultRadio.addEventListener('click', function() {
   document.body.style.backgroundColor = '#14303c';
