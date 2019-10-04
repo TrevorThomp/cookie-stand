@@ -161,3 +161,6 @@ var lima = new City('Lima', 2, 16, 4.6);
   lima.render();
   createTableFooter();
 })();
+
+
+// Event Listeners for homepage
