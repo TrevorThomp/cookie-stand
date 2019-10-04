@@ -35,6 +35,10 @@ th {
     padding: 10px;
 }
 
+label {
+    display: inline;
+}
+
 .table-location {
     padding: 10px;
 }
@@ -100,10 +104,30 @@ th {
   margin: 50px;
 }
 
-/* .nav-items {
+#input-container {
   display: flex;
-  justify-content: flex-end;
-  margin: 0;
+  position: relative;
+  padding: 10px;
+  width: 30%;
+  margin: 0 auto;
 }
-     */
 
+.input {
+  margin: 5px;
+  padding: 5px;
+}
+
+#submit-button {
+  text-align: center;
+  position: absolute;
+  top: 115px;
+  left: 300px;
+  padding: 20px;
+  width: 120px;
+  transition: 0.5s;
+}
+
+#submit-button:hover {
+  cursor: pointer;
+  background-color: white;
+}
