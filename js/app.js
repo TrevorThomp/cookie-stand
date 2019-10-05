@@ -1,5 +1,6 @@
 'use strict';
 
+// Constructor Function
 function City(location, minCustomers, maxCustomers, averageCookies) {
   this.location = location;
   this.minCustomers = minCustomers;
@@ -7,11 +8,13 @@ function City(location, minCustomers, maxCustomers, averageCookies) {
   this.averageCookies = averageCookies;
 }
 
+// Global Variables
 var storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 var controlCurve = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
 var locationArray = [];
 var sumArray = [];
 
+// Dynamically creates table header based on storeHours
 var createTableHeader = function() {
   var tableHeader = document.createElement('thead');
   var tableBody= document.createElement('tbody');
@@ -37,6 +40,7 @@ var createTableHeader = function() {
   row.appendChild(th);
 };
 
+// Dynamically creates table footer that calculates column totals
 var createTableFooter = function() {
   var tableFooter = document.createElement('tfoot');
   var row = document.createElement('tr');
@@ -69,6 +73,7 @@ var createTableFooter = function() {
   sumArray.push(dailyLocationSum);
 };
 
+// Function that deletes the <tfoot> element
 function delFooter() {
   var table = document.getElementById('table');
   table.deleteTFoot();
@@ -76,6 +81,7 @@ function delFooter() {
 
 //Dynamic Form
 var form = document.getElementById('main-form');
+form.addEventListener('submit', submitForm);
 
 function submitForm(e) {
   e.preventDefault();
@@ -92,8 +98,7 @@ function submitForm(e) {
   createTableFooter();
 }
 
-form.addEventListener('submit', submitForm);
-
+// Object prototype methods
 City.prototype.randomNumCustomer = function() {
   return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
 };
@@ -139,12 +144,14 @@ City.prototype.render = function() {
   locationArray.push(cityArray);
 };
 
+// Default data placed into constructor function
 var seattle = new City('Seattle', 23, 100, 6.3);
 var tokyo = new City('Tokyo', 3, 24, 1.2);
 var dubai = new City('Dubai', 11, 38, 3.7);
 var paris = new City('Paris', 20, 38, 2.3 );
 var lima = new City('Lima', 2, 16, 4.6);
 
+// Self-invoked function to render table data
 (function displayLists() {
   createTableHeader();
   seattle.render();
