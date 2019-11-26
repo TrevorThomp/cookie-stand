@@ -19,7 +19,6 @@ var createTableHeader = function() {
   const tableHeader = $('<thead/>');
   const tableBody= $('<tbody/>');
   tableBody.attr('id', 'table-body');
-  var section = document.getElementById('container');
   const table = $('<table/>');
   table.attr('id', 'table');
   table.append(tableHeader);
