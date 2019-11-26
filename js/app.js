@@ -207,8 +207,8 @@ function barChartData() {
 }
 
 function pieChartData() {
-  return new Chart($('canvas')[0].getContext('2d'), {
-    type: 'pie',
+  return new Chart($('canvas')[1].getContext('2d'), {
+    type: 'line',
     data: {
       labels: storeHours,
       datasets: [{
@@ -231,3 +231,14 @@ function pieChartData() {
     }
   });
 }
+
+// Chart Handlers
+$('#line').on('click', function() {
+  $('.barChart').hide();
+  $('.lineChart').show();
+});
+
+$('#bar').on('click', function() {
+  $('.lineChart').hide();
+  $('.barChart').show();
+});
