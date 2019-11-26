@@ -76,8 +76,7 @@ function delFooter() {
 }
 
 //Dynamic Form
-var form = document.getElementById('main-form');
-form.addEventListener('submit', submitForm);
+$('#main-form').on('submit', submitForm);
 
 function submitForm(e) {
   e.preventDefault();
