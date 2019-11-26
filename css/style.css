@@ -216,3 +216,8 @@ main h1 {
 #radio-container>input {
   margin-right: 10px;
 }
+
+/* Chart Container */
+#chart-container {
+  width: 40%;
+}
