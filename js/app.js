@@ -9,13 +9,13 @@ function City(location, minCustomers, maxCustomers, averageCookies) {
 }
 
 // Global Variables
-var storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
-var controlCurve = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
-var locationArray = [];
-var sumArray = [];
+const storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
+const controlCurve = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
+let locationArray = [];
+let sumArray = [];
 
 // Dynamically creates table header based on storeHours
-var createTableHeader = function() {
+let createTableHeader = () => {
   const tableHeader = $('<thead/>');
   const tableBody= $('<tbody/>');
   tableBody.attr('id', 'table-body');
@@ -40,7 +40,7 @@ var createTableHeader = function() {
 };
 
 // Dynamically creates table footer that calculates column totals
-var createTableFooter = function() {
+let createTableFooter = () => {
   const tableFooter = $('<tfoot/>');
   const row = $('<tr/>');
   let td = $('<td/>');
@@ -99,7 +99,7 @@ City.prototype.randomNumCustomer = function() {
 };
 
 City.prototype.cookiesPurchased = function () {
-  var result = [];
+  let result = [];
   for (var i = 0; i < storeHours.length; i++) {
     result.push(Math.floor((this.randomNumCustomer() * controlCurve[i]) * this.averageCookies));
   }
@@ -107,7 +107,7 @@ City.prototype.cookiesPurchased = function () {
 };
 
 City.prototype.totalSum = function () {
-  var cookieSum = 0;
+  let cookieSum = 0;
   for (var i = 0; i < storeHours.length; i++) {
     cookieSum += this.cookiesPurchased()[i];
   }
@@ -115,27 +115,26 @@ City.prototype.totalSum = function () {
 };
 
 City.prototype.render = function() {
-  var row = document.createElement('tr');
-  var tableBody = document.getElementById('table-body');
-  var td = document.createElement('td');
-  var cityArray = [];
-  tableBody.appendChild(row);
-  row.appendChild(td);
-  td.setAttribute('class', 'table-location');
-  td.textContent = `${this.location}`;
+  const row = $('<tr/>');
+  let td = $('<td/>');
+  let cityArray = [];
+  $('#table-body').append(row);
+  row.append(td);
+  td.addClass('table-location');
+  td.text(`${this.location}`);
 
   for (var i = 0; i < storeHours.length; i++) {
-    td = document.createElement('td');
-    var storage = this.cookiesPurchased()[i];
-    td.setAttribute('class', `${[i]}`);
-    td.textContent = storage;
-    row.appendChild(td);
+    td = $('<td/>');
+    let storage = this.cookiesPurchased()[i];
+    td.addClass(`${[i]}`);
+    td.text(storage);
+    row.append(td);
     cityArray.push(storage);
   }
-  td = document.createElement('td');
-  td.setAttribute('class', 'sum');
-  td.textContent = this.totalSum();
-  row.appendChild(td);
+  td = $('<td/>');
+  td.addClass('sum');
+  td.text(this.totalSum());
+  row.append(td);
   locationArray.push(cityArray);
 };
 
