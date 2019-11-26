@@ -16,7 +16,6 @@ h1 {
 h2 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-transform: uppercase;
-    text-decoration: underline;
 }
 
 li {
@@ -204,11 +203,13 @@ main h1 {
   margin-right: 30px;
 }
 
-#color-form {
+#color-form,
+#chart-choice {
   text-align: center;
 }
 
-#radio-container {
+#radio-container,
+#chart-choice {
   padding: 20px;
   width: 30%;
   margin: 0 auto;
@@ -216,4 +217,21 @@ main h1 {
 
 #radio-container>input {
   margin-right: 10px;
+}
+
+/* Chart Container */
+#chart-container {
+  width: 30%;
+}
+
+#charting-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.lineChart {
+  display: none;
 }
