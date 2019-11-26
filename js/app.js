@@ -42,34 +42,37 @@ var createTableHeader = function() {
 
 // Dynamically creates table footer that calculates column totals
 var createTableFooter = function() {
-  var tableFooter = document.createElement('tfoot');
-  var row = document.createElement('tr');
-  var table = document.getElementById('table');
-  var td = document.createElement('td');
-  table.appendChild(tableFooter);
-  tableFooter.appendChild(row);
-  row.appendChild(td);
-  td.setAttribute('class', 'table-location');
-  td.textContent = 'Totals';
+  // var tableFooter = document.createElement('tfoot');
+  const tableFooter = $('<tfoot/>');
+  // var row = document.createElement('tr');
+  const row = $('<tr/>');
+  // var table = document.getElementById('table');
+  // var td = document.createElement('td');
+  let td = $('<td/>');
+  $('#table').append(tableFooter);
+  tableFooter.append(row);
+  row.append(td);
+  td.addClass('table-location');
+  td.text('Totals');
   //Loops through and calculates columns by class then stores in bottom row
   for (var i = 0; i < storeHours.length; i++) {
-    var sumValue = 0;
-    var dailyLocationSum = 0;
+    let sumValue = 0;
+    let dailyLocationSum = 0;
     var colValues = document.getElementsByClassName(`${[i]}`);
     var dailyValues = document.getElementsByClassName('sum');
     for (var j = 0; j < locationArray.length; j++) {
       dailyLocationSum += parseInt(dailyValues[j].textContent);
       sumValue += parseInt(colValues[j].textContent);
     }
-    td = document.createElement('td');
-    td.setAttribute('class', 'colTotals');
-    td.textContent = sumValue;
-    row.appendChild(td);
+    td = $('<td/>');
+    td.addClass('colTotals');
+    td.text(sumValue);
+    row.append(td);
     sumArray.push(sumValue);
   }
-  td = document.createElement('td');
-  td.textContent = dailyLocationSum.toLocaleString();
-  row.appendChild(td);
+  td = $('<td/>');
+  td.text(dailyLocationSum.toLocaleString());
+  row.append(td);
   sumArray.push(dailyLocationSum);
 };
 
