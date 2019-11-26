@@ -91,7 +91,7 @@ function submitForm(e) {
   newCity.render();
   delFooter();
   createTableFooter();
-  chartData();
+  barChartData();
 }
 
 // Object prototype methods
@@ -155,7 +155,8 @@ let lima = new City('Lima', 2, 16, 4.6);
   paris.render();
   lima.render();
   createTableFooter();
-  chartData();
+  barChartData();
+  pieChartData();
 })();
 
 // Random RGB function
@@ -179,9 +180,35 @@ function chartColors() {
 }
 
 // ChartJS Data
-function chartData() {
+function barChartData() {
   return new Chart($('canvas')[0].getContext('2d'), {
     type: 'bar',
+    data: {
+      labels: storeHours,
+      datasets: [{
+        label: '# of Cookies',
+        data: sumArray,
+        backgroundColor: chartColors(),
+        borderColor: chartColors(),
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            max: 1000,
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+}
+
+function pieChartData() {
+  return new Chart($('canvas')[0].getContext('2d'), {
+    type: 'pie',
     data: {
       labels: storeHours,
       datasets: [{
