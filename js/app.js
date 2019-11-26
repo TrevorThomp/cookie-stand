@@ -16,38 +16,34 @@ var sumArray = [];
 
 // Dynamically creates table header based on storeHours
 var createTableHeader = function() {
-  var tableHeader = document.createElement('thead');
-  var tableBody= document.createElement('tbody');
-  tableBody.setAttribute('id', 'table-body');
+  const tableHeader = $('<thead/>');
+  const tableBody= $('<tbody/>');
+  tableBody.attr('id', 'table-body');
   var section = document.getElementById('container');
-  var table = document.createElement('table');
-  table.setAttribute('id', 'table');
-  table.appendChild(tableHeader);
-  table.appendChild(tableBody);
-  var th = document.createElement('th');
-  th.textContent = ' ';
-  var row = document.createElement('tr');
-  row.appendChild(th);
-  section.appendChild(table);
-  tableHeader.appendChild(row);
+  const table = $('<table/>');
+  table.attr('id', 'table');
+  table.append(tableHeader);
+  table.append(tableBody);
+  var th = $('<th/>');
+  th.text(' ');
+  var row = $('<tr/>');
+  row.append(th);
+  $('#container').append(table);
+  tableHeader.append(row);
   for(var i = 0; i < storeHours.length; i++) {
-    th = document.createElement('th');
-    th.textContent = storeHours[i];
-    row.appendChild(th);
+    th = $('<th/>');
+    th.text(storeHours[i]);
+    row.append(th);
   }
-  th = document.createElement('th');
-  th.textContent = 'Daily Location Total';
-  row.appendChild(th);
+  th = $('<th/>');
+  th.text('Daily Location Total');
+  row.append(th);
 };
 
 // Dynamically creates table footer that calculates column totals
 var createTableFooter = function() {
-  // var tableFooter = document.createElement('tfoot');
   const tableFooter = $('<tfoot/>');
-  // var row = document.createElement('tr');
   const row = $('<tr/>');
-  // var table = document.getElementById('table');
-  // var td = document.createElement('td');
   let td = $('<td/>');
   $('#table').append(tableFooter);
   tableFooter.append(row);
@@ -55,14 +51,13 @@ var createTableFooter = function() {
   td.addClass('table-location');
   td.text('Totals');
   //Loops through and calculates columns by class then stores in bottom row
+  let dailyLocationSum = 0;
   for (var i = 0; i < storeHours.length; i++) {
     let sumValue = 0;
-    let dailyLocationSum = 0;
-    var colValues = document.getElementsByClassName(`${[i]}`);
-    var dailyValues = document.getElementsByClassName('sum');
+
     for (var j = 0; j < locationArray.length; j++) {
-      dailyLocationSum += parseInt(dailyValues[j].textContent);
-      sumValue += parseInt(colValues[j].textContent);
+      dailyLocationSum += parseInt($('.sum')[j].textContent);
+      sumValue += parseInt($(`.${[i]}`)[j].textContent);
     }
     td = $('<td/>');
     td.addClass('colTotals');
