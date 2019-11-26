@@ -1,35 +1,41 @@
 'use strict';
 
 // Event Listeners for homepage
-var defaultRadio = document.getElementById('default');
-var blueRadio = document.getElementById('blue');
-var redRadio = document.getElementById('red');
-var greenRadio = document.getElementById('green');
-var orangeRadio = document.getElementById('orange');
-
-defaultRadio.addEventListener('click', function() {
-  document.body.style.backgroundColor = '#14303c';
-  document.body.style.color = 'rgb(109, 146, 160)';
+$('#default').on('click', function() {
+  $('body').css({
+    'background-color': '#14303c',
+    'color': 'rgb(109, 146, 160)'
+  });
 });
 
-blueRadio.addEventListener('click', function() {
-  document.body.style.backgroundColor = '#2F4D74';
-  document.body.style.color = '#859DBC';
+// Blue Background
+$('#blue').on('click', function() {
+  $('body').css({
+    'background-color': '#2F4D74',
+    'color': 'white'
+  });
 });
 
-redRadio.addEventListener('click', function() {
-  document.body.style.backgroundColor = '#AB3D48';
-  document.body.style.color = 'white';
+// Red Background
+$('#red').on('click', function() {
+  $('body').css({
+    'background-color': '#AB3D48',
+    'color': 'white'
+  });
 });
 
-greenRadio.addEventListener('click', function() {
-  document.body.style.backgroundColor = '#31893C';
-  document.body.style.color = 'white';
+// Green background
+$('#green').on('click', function() {
+  $('body').css({
+    'background-color': '#31893C',
+    'color': 'white'
+  });
 });
 
-orangeRadio.addEventListener('click', function() {
-  document.body.style.backgroundColor = '#AA6939';
-  document.body.style.color = '#FFCEAA';
+// Orange background
+$('#orange').on('click', function() {
+  $('body').css({
+    'background-color': '#AA6939',
+    'color': '#FFCEAA'
+  });
 });
-
-
