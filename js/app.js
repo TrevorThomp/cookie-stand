@@ -72,8 +72,7 @@ var createTableFooter = function() {
 
 // Function that deletes the <tfoot> element
 function delFooter() {
-  var table = document.getElementById('table');
-  table.deleteTFoot();
+  $('tfoot').remove();
 }
 
 //Dynamic Form
