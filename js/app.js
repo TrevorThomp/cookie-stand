@@ -91,6 +91,7 @@ function submitForm(e) {
   newCity.render();
   delFooter();
   createTableFooter();
+  chartData();
 }
 
 // Object prototype methods
@@ -154,10 +155,11 @@ let lima = new City('Lima', 2, 16, 4.6);
   paris.render();
   lima.render();
   createTableFooter();
+  chartData();
 })();
 
 // Random RGB function
-let randomRGB = () => {
+function randomRGB() {
   const max = 255;
   const min = 0;
   let number = function() {
@@ -165,39 +167,40 @@ let randomRGB = () => {
   };
   let color = `rgb(${number()}, ${number()}, ${number()})`;
   return color;
-};
+}
 
 // Stores random RGB in array to call on later for chart colors
-let chartColors = () => {
+function chartColors() {
   let backgroundColor = [];
   storeHours.forEach(() => {
     backgroundColor.push(randomRGB());
   });
   return backgroundColor;
-};
+}
 
-// ChartJS
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: storeHours,
-    datasets: [{
-      label: '# of Cookies',
-      data: sumArray,
-      backgroundColor: chartColors(),
-      borderColor: chartColors(),
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      yAxes: [{
-        ticks: {
-          max: 1000,
-          beginAtZero: true
-        }
+// ChartJS Data
+function chartData() {
+  return new Chart($('canvas')[0].getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: storeHours,
+      datasets: [{
+        label: '# of Cookies',
+        data: sumArray,
+        backgroundColor: chartColors(),
+        borderColor: chartColors(),
+        borderWidth: 1
       }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            max: 1000,
+            beginAtZero: true
+          }
+        }]
+      }
     }
-  }
-});
+  });
+}
