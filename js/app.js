@@ -29,7 +29,7 @@ let createTableHeader = () => {
   row.append(th);
   $('#container').append(table);
   tableHeader.append(row);
-  for(var i = 0; i < storeHours.length; i++) {
+  for(let i = 0; i < storeHours.length; i++) {
     th = $('<th/>');
     th.text(storeHours[i]);
     row.append(th);
@@ -51,10 +51,10 @@ let createTableFooter = () => {
   td.text('Totals');
   //Loops through and calculates columns by class then stores in bottom row
   let dailyLocationSum = 0;
-  for (var i = 0; i < storeHours.length; i++) {
+  for (let i = 0; i < storeHours.length; i++) {
     let sumValue = 0;
 
-    for (var j = 0; j < locationArray.length; j++) {
+    for (let j = 0; j < locationArray.length; j++) {
       dailyLocationSum += parseInt($('.sum')[j].textContent);
       sumValue += parseInt($(`.${[i]}`)[j].textContent);
     }
@@ -100,7 +100,7 @@ City.prototype.randomNumCustomer = function() {
 
 City.prototype.cookiesPurchased = function () {
   let result = [];
-  for (var i = 0; i < storeHours.length; i++) {
+  for (let i = 0; i < storeHours.length; i++) {
     result.push(Math.floor((this.randomNumCustomer() * controlCurve[i]) * this.averageCookies));
   }
   return result;
@@ -108,7 +108,7 @@ City.prototype.cookiesPurchased = function () {
 
 City.prototype.totalSum = function () {
   let cookieSum = 0;
-  for (var i = 0; i < storeHours.length; i++) {
+  for (let i = 0; i < storeHours.length; i++) {
     cookieSum += this.cookiesPurchased()[i];
   }
   return cookieSum;
@@ -123,7 +123,7 @@ City.prototype.render = function() {
   td.addClass('table-location');
   td.text(`${this.location}`);
 
-  for (var i = 0; i < storeHours.length; i++) {
+  for (let i = 0; i < storeHours.length; i++) {
     td = $('<td/>');
     let storage = this.cookiesPurchased()[i];
     td.addClass(`${[i]}`);
@@ -139,11 +139,11 @@ City.prototype.render = function() {
 };
 
 // Default data placed into constructor function
-var seattle = new City('Seattle', 23, 100, 6.3);
-var tokyo = new City('Tokyo', 3, 24, 1.2);
-var dubai = new City('Dubai', 11, 38, 3.7);
-var paris = new City('Paris', 20, 38, 2.3 );
-var lima = new City('Lima', 2, 16, 4.6);
+let seattle = new City('Seattle', 23, 100, 6.3);
+let tokyo = new City('Tokyo', 3, 24, 1.2);
+let dubai = new City('Dubai', 11, 38, 3.7);
+let paris = new City('Paris', 20, 38, 2.3 );
+let lima = new City('Lima', 2, 16, 4.6);
 
 // Self-invoked function to render table data
 (function displayLists() {
