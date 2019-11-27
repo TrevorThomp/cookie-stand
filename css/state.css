@@ -19,4 +19,14 @@ h1 {
   #chart-container {
     width: 30%;
   }
+
+  #input-container input {
+    width: 70%;
+  }
+
+  #submit-button {
+    width: 70%;
+    margin-top: 20px;
+    margin-left: 5px;
+  }
 }
