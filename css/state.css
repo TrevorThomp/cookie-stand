@@ -1,0 +1,32 @@
+@media (min-width: 768px) {
+  #greeting-container,
+  #apparel-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.home-photos {
+  width: 30%;
+}
+
+h1 {
+  text-align: center;
+}
+}
+
+@media (min-width: 900px) {
+  #chart-container {
+    width: 30%;
+  }
+
+  #input-container input {
+    width: 70%;
+  }
+
+  #submit-button {
+    width: 70%;
+    margin-top: 20px;
+    margin-left: 5px;
+  }
+}
