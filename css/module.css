@@ -1,123 +1,123 @@
 .table-location {
-  padding: 10px;
+	padding: 10px;
 }
 
 .nav-item {
-color: rgb(109, 146, 160);
-text-decoration: none;
-font-size: 1.1em;
-padding: 10px;
-transition: 0.5s;
-margin-right: 45px;
+	color: rgb(109, 146, 160);
+	text-decoration: none;
+	font-size: 1.1em;
+	padding: 10px;
+	transition: 0.5s;
+	margin-right: 45px;
 }
 
 .nav-item:hover {
-cursor: pointer;
-color: white;
-text-decoration: underline;
+	cursor: pointer;
+	color: white;
+	text-decoration: underline;
 }
 
 .cookies {
-  border: 1px solid black;
-  border-radius: 10px;
-  margin-top: 175px;
-  margin-right: 15px;
-  padding: 50px; 
-  text-align: center;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-top: 175px;
+	margin-right: 15px;
+	padding: 50px;
+	text-align: center;
 }
 
 .circle {
-border-radius: 50%;
-width: 100px;
-height: 100px;
-background-color: yellow;
-margin: 50px;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+	margin: 50px;
 }
 
 .input {
-margin: 5px;
-padding: 5px;
+	margin: 5px;
+	padding: 5px;
 }
 
 .input:focus {
-outline: none;
+	outline: none;
 }
 
-.home-photos { 
-margin: 15px;
-height: 280px;
+.home-photos {
+	margin: 15px;
+	height: 280px;
 }
 
 #main-header {
-margin-top: 20px;
-justify-content: space-between;
-border-bottom: 1px solid white;
-padding-bottom: 20px;
+	margin-top: 20px;
+	justify-content: space-between;
+	border-bottom: 1px solid white;
+	padding-bottom: 20px;
 }
 
 #color-circles {
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: row;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
 }
 
 #submit-button {
-background-color: transparent;
-color: white;
-text-align: center;
-padding: 20px;
-width: 120px;
-transition: 0.5s;
+	background-color: transparent;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	width: 120px;
+	transition: 0.5s;
 }
 
 #submit-button:hover {
-cursor: pointer;
-background-color: white;
-color: black;
+	cursor: pointer;
+	background-color: white;
+	color: black;
 }
 
-#greeting-container>p,
-#apparel-container>p {
-line-height: 30px;  
+#greeting-container > p,
+#apparel-container > p {
+	line-height: 30px;
 }
 
 #multiple-fish {
-height: 280px;
+	height: 280px;
 }
 
 #frosted-cookies {
-border-radius: 50%; 
-transition: 1s;
+	border-radius: 50%;
+	transition: 1s;
 }
 
 #frosted-cookies:hover {
-transform: rotate(360deg);
+	transform: rotate(360deg);
 }
 
 #color-form,
 #chart-choice {
-text-align: center;
+	text-align: center;
 }
 
-#radio-container>input {
-margin-right: 10px;
+#radio-container > input {
+	margin-right: 10px;
 }
 
 .lineChart {
-display: none;
+	display: none;
 }
 
 .blue {
-  background-color: transparent !important;
+	background-color: transparent !important;
 }
 
 /* NavBar */
 
 .navbar {
-  width: 100%;
+	width: 100%;
 }
 
 .bg-dark {
-  background-color: transparent!important;
+	background-color: transparent !important;
 }

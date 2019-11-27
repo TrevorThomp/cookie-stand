@@ -1,69 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Style Guide</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/styleguide.css">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Style Guide</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="../css/styleguide.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header id="main-header">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="#">Salmon Cookies</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link active" href="/index.html"
+							>Home <span class="sr-only">(current)</span></a
+						>
+						<a class="nav-item nav-link" href="/pages/sales.html">Sales Data</a>
+					</div>
+				</div>
+			</nav>
+		</header>
 
-  <header id="main-header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Salmon Cookies</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="/index.html">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="/pages/sales.html">Sales Data</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+		<main>
+			<ul id="color-circles">
+				<li class="circle primary">
+					<p>Color Primary</p>
+				</li>
+				<li class="circle secondary">
+					<p>Color Secondary</p>
+				</li>
+				<li class="circle tertiary">
+					<p>Color Tertiary</p>
+				</li>
+				<li class="circle blue">
+					<p>Color Blue</p>
+				</li>
+				<li class="circle red">
+					<p>Color Red</p>
+				</li>
+				<li class="circle green">
+					<p>Color Green</p>
+				</li>
+				<li class="circle orange">
+					<p>Color Orange</p>
+				</li>
+			</ul>
 
-  <main>
-    <ul id="color-circles">
-    <li class="circle primary">
-      <p>Color Primary</p>
-    </li>
-    <li class="circle secondary">
-      <p>Color Secondary</p>
-    </li>
-    <li class="circle tertiary">
-      <p>Color Tertiary</p>
-    </li>
-    <li class="circle blue">
-      <p>Color Blue</p>
-    </li>
-    <li class="circle red">
-      <p>Color Red</p>
-    </li>
-    <li class="circle green">
-      <p>Color Green</p>
-    </li>
-    <li class="circle orange">
-      <p>Color Orange</p>
-    </li>
-    </ul>
-  
-    <section id="typography">
-      <h3>Typography</h3>
-      <dl>
-        <dt>Headings</dt>
-        <dd class="verdana">Verdana</dd>
-        <dt>Paragraph</dt>
-        <dd class="georgia">Georgia</dd>
-        <dt>Data Text</dt>
-        <dd class="data-text">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit faucibus libero, risus vivamus metus ridiculus phasellus ad sagittis duis, tempus vehicula porta lacinia malesuada congue cum arcu. Velit non diam torquent senectus ultrices proin lacinia taciti, fusce scelerisque quisque inceptos nec pretium facilisi a, euismod aliquam quis ultricies erat auctor suscipit. Luctus metus taciti auctor vel eu velit tortor iaculis, erat parturient tempus porttitor nisl cras fames duis accumsan, risus ad orci penatibus fringilla primis ut.
-        </dd>
-      </dl>
-    </section>
-  </main>
-</body>
+			<section id="typography">
+				<h3>Typography</h3>
+				<dl>
+					<dt>Headings</dt>
+					<dd class="verdana">Verdana</dd>
+					<dt>Paragraph</dt>
+					<dd class="georgia">Georgia</dd>
+					<dt>Data Text</dt>
+					<dd class="data-text">
+						Lorem ipsum dolor sit amet consectetur adipiscing elit faucibus
+						libero, risus vivamus metus ridiculus phasellus ad sagittis duis,
+						tempus vehicula porta lacinia malesuada congue cum arcu. Velit non
+						diam torquent senectus ultrices proin lacinia taciti, fusce
+						scelerisque quisque inceptos nec pretium facilisi a, euismod aliquam
+						quis ultricies erat auctor suscipit. Luctus metus taciti auctor vel
+						eu velit tortor iaculis, erat parturient tempus porttitor nisl cras
+						fames duis accumsan, risus ad orci penatibus fringilla primis ut.
+					</dd>
+				</dl>
+			</section>
+		</main>
+	</body>
 </html>

@@ -1,54 +1,54 @@
 #container,
 #container2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30px;
 }
 
 #input-container {
-  display: flex;
-  position: relative;
-  padding: 10px;
-  width: 30%;
-  margin: 0 auto;
+	display: flex;
+	position: relative;
+	padding: 10px;
+	width: 30%;
+	margin: 0 auto;
 }
 
 #radio-container,
 #chart-choice {
-padding: 20px;
-margin: 0 auto;
+	padding: 20px;
+	margin: 0 auto;
 }
 
 #greeting-container,
 #apparel-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 }
 
 #frosty-container {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 #contact-information {
-  display: flex;
-  justify-content: flex-end;
-  border-top: 1px solid white;
-  margin-top: 30px;
-  margin-right: 30px;
+	display: flex;
+	justify-content: flex-end;
+	border-top: 1px solid white;
+	margin-top: 30px;
+	margin-right: 30px;
 }
 
 /* Chart Container */
 #chart-container {
-  width: 80%;
+	width: 80%;
 }
 
 #charting-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 40px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 40px;
 }

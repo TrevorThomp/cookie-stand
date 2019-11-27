@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // Constructor Function
 function City(location, minCustomers, maxCustomers, averageCookies) {
@@ -9,62 +9,93 @@ function City(location, minCustomers, maxCustomers, averageCookies) {
 }
 
 // Global Variables
-const storeHours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
-const controlCurve = [0.5, 0.75, 1.0, 0.6, 0.8, 1.0, 0.7, 0.4, 0.6, 0.9, 0.7, 0.5, 0.3, 0.4, 0.6];
+const storeHours = [
+  "6:00am",
+  "7:00am",
+  "8:00am",
+  "9:00am",
+  "10:00am",
+  "11:00am",
+  "12:00am",
+  "1:00pm",
+  "2:00pm",
+  "3:00pm",
+  "4:00pm",
+  "5:00pm",
+  "6:00pm",
+  "7:00pm"
+];
+const controlCurve = [
+  0.5,
+  0.75,
+  1.0,
+  0.6,
+  0.8,
+  1.0,
+  0.7,
+  0.4,
+  0.6,
+  0.9,
+  0.7,
+  0.5,
+  0.3,
+  0.4,
+  0.6
+];
 let locationArray = [];
 let sumArray = [];
 
 // Dynamically creates table header based on storeHours
 let createTableHeader = () => {
-  const tableHeader = $('<thead/>');
-  const tableBody= $('<tbody/>');
-  tableBody.attr('id', 'table-body');
-  const table = $('<table/>');
-  table.attr('id', 'table');
+  const tableHeader = $("<thead/>");
+  const tableBody = $("<tbody/>");
+  tableBody.attr("id", "table-body");
+  const table = $("<table/>");
+  table.attr("id", "table");
   table.append(tableHeader);
   table.append(tableBody);
-  var th = $('<th/>');
-  th.text(' ');
-  var row = $('<tr/>');
+  var th = $("<th/>");
+  th.text(" ");
+  var row = $("<tr/>");
   row.append(th);
-  $('#container').append(table);
+  $("#container").append(table);
   tableHeader.append(row);
-  for(let i = 0; i < storeHours.length; i++) {
-    th = $('<th/>');
+  for (let i = 0; i < storeHours.length; i++) {
+    th = $("<th/>");
     th.text(storeHours[i]);
     row.append(th);
   }
-  th = $('<th/>');
-  th.text('Daily Location Total');
+  th = $("<th/>");
+  th.text("Daily Location Total");
   row.append(th);
 };
 
 // Dynamically creates table footer that calculates column totals
 let createTableFooter = () => {
-  const tableFooter = $('<tfoot/>');
-  const row = $('<tr/>');
-  let td = $('<td/>');
-  $('#table').append(tableFooter);
+  const tableFooter = $("<tfoot/>");
+  const row = $("<tr/>");
+  let td = $("<td/>");
+  $("#table").append(tableFooter);
   tableFooter.append(row);
   row.append(td);
-  td.addClass('table-location');
-  td.text('Totals');
+  td.addClass("table-location");
+  td.text("Totals");
   //Loops through and calculates columns by class then stores in bottom row
   let dailyLocationSum = 0;
   for (let i = 0; i < storeHours.length; i++) {
     let sumValue = 0;
 
     for (let j = 0; j < locationArray.length; j++) {
-      dailyLocationSum += parseInt($('.sum')[j].textContent);
+      dailyLocationSum += parseInt($(".sum")[j].textContent);
       sumValue += parseInt($(`.${[i]}`)[j].textContent);
     }
-    td = $('<td/>');
-    td.addClass('colTotals');
+    td = $("<td/>");
+    td.addClass("colTotals");
     td.text(sumValue);
     row.append(td);
     sumArray.push(sumValue);
   }
-  td = $('<td/>');
+  td = $("<td/>");
   td.text(dailyLocationSum.toLocaleString());
   row.append(td);
   sumArray.push(dailyLocationSum);
@@ -72,11 +103,11 @@ let createTableFooter = () => {
 
 // Function that deletes the <tfoot> element
 function delFooter() {
-  $('tfoot').remove();
+  $("tfoot").remove();
 }
 
 //Dynamic Form
-$('#main-form').on('submit', submitForm);
+$("#main-form").on("submit", submitForm);
 
 function submitForm(e) {
   e.preventDefault();
@@ -96,18 +127,24 @@ function submitForm(e) {
 
 // Object prototype methods
 City.prototype.randomNumCustomer = function() {
-  return Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
+  return Math.floor(
+    Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers
+  );
 };
 
-City.prototype.cookiesPurchased = function () {
+City.prototype.cookiesPurchased = function() {
   let result = [];
   for (let i = 0; i < storeHours.length; i++) {
-    result.push(Math.floor((this.randomNumCustomer() * controlCurve[i]) * this.averageCookies));
+    result.push(
+      Math.floor(
+        this.randomNumCustomer() * controlCurve[i] * this.averageCookies
+      )
+    );
   }
   return result;
 };
 
-City.prototype.totalSum = function () {
+City.prototype.totalSum = function() {
   let cookieSum = 0;
   for (let i = 0; i < storeHours.length; i++) {
     cookieSum += this.cookiesPurchased()[i];
@@ -116,35 +153,35 @@ City.prototype.totalSum = function () {
 };
 
 City.prototype.render = function() {
-  const row = $('<tr/>');
-  let td = $('<td/>');
+  const row = $("<tr/>");
+  let td = $("<td/>");
   let cityArray = [];
-  $('#table-body').append(row);
+  $("#table-body").append(row);
   row.append(td);
-  td.addClass('table-location');
+  td.addClass("table-location");
   td.text(`${this.location}`);
 
   for (let i = 0; i < storeHours.length; i++) {
-    td = $('<td/>');
+    td = $("<td/>");
     let storage = this.cookiesPurchased()[i];
     td.addClass(`${[i]}`);
     td.text(storage);
     row.append(td);
     cityArray.push(storage);
   }
-  td = $('<td/>');
-  td.addClass('sum');
+  td = $("<td/>");
+  td.addClass("sum");
   td.text(this.totalSum());
   row.append(td);
   locationArray.push(cityArray);
 };
 
 // Default data placed into constructor function
-let seattle = new City('Seattle', 23, 100, 6.3);
-let tokyo = new City('Tokyo', 3, 24, 1.2);
-let dubai = new City('Dubai', 11, 38, 3.7);
-let paris = new City('Paris', 20, 38, 2.3 );
-let lima = new City('Lima', 2, 16, 4.6);
+let seattle = new City("Seattle", 23, 100, 6.3);
+let tokyo = new City("Tokyo", 3, 24, 1.2);
+let dubai = new City("Dubai", 11, 38, 3.7);
+let paris = new City("Paris", 20, 38, 2.3);
+let lima = new City("Lima", 2, 16, 4.6);
 
 // Self-invoked function to render table data
 (function displayLists() {
@@ -181,64 +218,72 @@ function chartColors() {
 
 // ChartJS Data
 function barChartData() {
-  return new Chart($('canvas')[0].getContext('2d'), {
-    type: 'bar',
+  return new Chart($("canvas")[0].getContext("2d"), {
+    type: "bar",
     data: {
       labels: storeHours,
-      datasets: [{
-        label: '# of Cookies',
-        data: sumArray,
-        backgroundColor: chartColors(),
-        borderColor: chartColors(),
-        borderWidth: 1
-      }]
+      datasets: [
+        {
+          label: "# of Cookies",
+          data: sumArray,
+          backgroundColor: chartColors(),
+          borderColor: chartColors(),
+          borderWidth: 1
+        }
+      ]
     },
     options: {
       scales: {
-        yAxes: [{
-          ticks: {
-            max: 1000,
-            beginAtZero: true
+        yAxes: [
+          {
+            ticks: {
+              max: 1000,
+              beginAtZero: true
+            }
           }
-        }]
+        ]
       }
     }
   });
 }
 
 function pieChartData() {
-  return new Chart($('canvas')[1].getContext('2d'), {
-    type: 'line',
+  return new Chart($("canvas")[1].getContext("2d"), {
+    type: "line",
     data: {
       labels: storeHours,
-      datasets: [{
-        label: '# of Cookies',
-        data: sumArray,
-        backgroundColor: chartColors(),
-        borderColor: chartColors(),
-        borderWidth: 1
-      }]
+      datasets: [
+        {
+          label: "# of Cookies",
+          data: sumArray,
+          backgroundColor: chartColors(),
+          borderColor: chartColors(),
+          borderWidth: 1
+        }
+      ]
     },
     options: {
       scales: {
-        yAxes: [{
-          ticks: {
-            max: 1000,
-            beginAtZero: true
+        yAxes: [
+          {
+            ticks: {
+              max: 1000,
+              beginAtZero: true
+            }
           }
-        }]
+        ]
       }
     }
   });
 }
 
 // Chart Handlers
-$('#line').on('click', function() {
-  $('.barChart').hide();
-  $('.lineChart').show();
+$("#line").on("click", function() {
+  $(".barChart").hide();
+  $(".lineChart").show();
 });
 
-$('#bar').on('click', function() {
-  $('.lineChart').hide();
-  $('.barChart').show();
+$("#bar").on("click", function() {
+  $(".lineChart").hide();
+  $(".barChart").show();
 });
