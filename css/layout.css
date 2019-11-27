@@ -14,10 +14,17 @@
   margin: 0 auto;
 }
 
+#radio-container,
+#chart-choice {
+padding: 20px;
+margin: 0 auto;
+}
+
 #greeting-container,
 #apparel-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #frosty-container {
@@ -35,7 +42,7 @@
 
 /* Chart Container */
 #chart-container {
-  width: 30%;
+  width: 80%;
 }
 
 #charting-container {

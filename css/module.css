@@ -44,22 +44,8 @@ outline: none;
 }
 
 .home-photos { 
-width: 30%;
 margin: 15px;
 height: 280px;
-}
-
-#nav-salmon { 
-  width: 10%;
-}
-
-#nav-chinook {
-width: 10%;
-}
-
-#main-header,
-#main-nav {
-  display: flex;
 }
 
 #main-header {
@@ -80,9 +66,6 @@ flex-direction: row;
 background-color: transparent;
 color: white;
 text-align: center;
-position: absolute;
-top: 115px;
-left: 300px;
 padding: 20px;
 width: 120px;
 transition: 0.5s;
@@ -117,17 +100,24 @@ transform: rotate(360deg);
 text-align: center;
 }
 
-#radio-container,
-#chart-choice {
-padding: 20px;
-width: 30%;
-margin: 0 auto;
-}
-
 #radio-container>input {
 margin-right: 10px;
 }
 
 .lineChart {
 display: none;
+}
+
+.blue {
+  background-color: transparent !important;
+}
+
+/* NavBar */
+
+.navbar {
+  width: 100%;
+}
+
+.bg-dark {
+  background-color: transparent!important;
 }
